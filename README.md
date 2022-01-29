@@ -3,7 +3,7 @@ Installing pg_auto_failover posgresql HA cluster script with multiple options
 
 - This script provide you multiple option to do instalation with selection.
 
-####Installation available options!
+### Installation available options!
 
 1) Install pg_autoctl rpm     -   6) nodes delete
 2) monitor node create        -   7) delete installed pg instance
@@ -11,7 +11,7 @@ Installing pg_auto_failover posgresql HA cluster script with multiple options
 4) uri check                  -   9) md5 enable for flexydial
 5) state check
 
-####Please Enter Number:
+### Please Enter Number:
 
 Now You can install with selection.
 
