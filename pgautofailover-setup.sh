@@ -49,14 +49,21 @@ function Install(){
     else
 
        echo -e "Package ${R}${check_package}${C} is already installed."
-    fi      
+       break;
+    fi
+          
 }
 
 function monitor(){
 
-  URI=$(sudo -u postgres ${pgautoctlpath}pg_autoctl show uri | grep monitor | awk '{print $5}')
+    #Check pg-auto-failover package installed status
+    Install 
+    pgautoctlpath=$(find /usr/ -type f -name 'pg_autoctl' -print | sed 's/pg_autoctl//g')
+    #echo "${pgautoctlpath}"
+
+    URI=$(sudo -u postgres ${pgautoctlpath}pg_autoctl show uri | grep monitor | awk '{print $5}')
   
-  if [[ -z "${URI}" ]]; then
+    if [[ -z "${URI}" ]]; then
         echo "empty string"
         rm -rvf ${PGPath}/* ${PGPath}.config &>/dev/null
 
@@ -108,7 +115,12 @@ function state(){
 
 function postgres(){
 
-  if (( $(ps aux | grep pg_autoctl | grep -v grep | wc -l) == 0 )); then
+    #Check pg-auto-failover package installed status
+    Install
+    pgautoctlpath=$(find /usr/ -type f -name 'pg_autoctl' -print | sed 's/pg_autoctl//g')
+    #echo "${pgautctlpath}"
+
+    if (( $(ps aux | grep pg_autoctl | grep -v grep | wc -l) == 0 )); then
         
         #setup required environment.
         read -p "Enter monitor IP Adress: " monitor
@@ -213,7 +225,7 @@ PS3="Please Enter Number: "
 
 echo -e "${Y}Installation available options!${C}"
 
-select type in 'Install pg_auto_failover rpm' 'monitor node create' 'postgres node create' 'uri check' 'state check' 'nodes delete' 'delete installed pg node' 'firewall enable port 5432' 'md5 enable for flexydial'
+select type in 'Install pg_autoctl rpm' 'monitor node create' 'postgres node create' 'uri check' 'state check' 'nodes delete' 'delete installed pg instance' 'firewall enable port 5432' 'md5 enable for flexydial'
 do 
     if [[ -n "${type}" ]]; then
         ${type}
