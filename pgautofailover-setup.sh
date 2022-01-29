@@ -1,7 +1,7 @@
 #!/bin/bash
 #################################################################
 #   Script for setup pgautofailover with pg_autoctl extention   #
-#   Editor: Govind Sharma <govind.sharma@flexydial.com>         #
+#   Author: Govind Sharma <govind_sharma@live.com>              #
 #################################################################
 # Colors
 C='\033[0m'
@@ -208,7 +208,7 @@ function firewall(){
 
 function md5(){
 
-    #adding entery for allow flexydial connect with md5
+    #adding entery for allow apps connect with md5
 
     read -p "Do you want to add md5, please enter [y/n]: " ans
     case $ans in
