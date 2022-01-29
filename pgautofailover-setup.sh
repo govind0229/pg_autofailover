@@ -49,8 +49,7 @@ function Install(){
     else
 
        echo -e "Package ${R}${check_package}${C} is already installed."
-    fi
-          
+    fi      
 }
 
 function monitor(){
@@ -214,7 +213,7 @@ PS3="Please Enter Number: "
 
 echo -e "${Y}Installation available options!${C}"
 
-select type in 'Install pg_autoctl rpm' 'monitor node create' 'postgres node create' 'uri check' 'state check' 'nodes delete' 'delete installed pg instance' 'firewall enable port 5432' 'md5 enable for flexydial'
+select type in 'Install pg_auto_failover rpm' 'monitor node create' 'postgres node create' 'uri check' 'state check' 'nodes delete' 'delete installed pg node' 'firewall enable port 5432' 'md5 enable for flexydial'
 do 
     if [[ -n "${type}" ]]; then
         ${type}
