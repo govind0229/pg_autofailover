@@ -13,7 +13,7 @@ Installing pg_auto_failover posgresql HA cluster script with multiple options
 6) nodes delete
 7) delete installed pg instance
 8) firewall enable port 5432
-9) md5 enable for flexydial
+9) md5 enable for application
 
 ### Please Enter Number:
 
