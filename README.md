@@ -17,6 +17,9 @@ Installing pg_auto_failover posgresql HA cluster script with multiple options
 
 ### Please Enter Number:
 
+
+- If the pg-auto-failover rpm is not installed on the computer, you will be presented with a list of available packages from which you can select and install any.
+
 Now You can install with selection.
 
 Enjoy!
