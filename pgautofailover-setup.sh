@@ -208,7 +208,7 @@ function firewall(){
 
 function md5(){
 
-    #adding entery for allow apps connect with md5
+    #adding entery for allow flexydial connect with md5
 
     read -p "Do you want to add md5, please enter [y/n]: " ans
     case $ans in
